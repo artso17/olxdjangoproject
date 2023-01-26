@@ -217,13 +217,7 @@ TIPE_PENJUAL_CHOICES = [('Diler', 'Diler'), ('Individu', 'Individu'), ('undefine
 
 
 class PredictForm(forms.Form):
-    location_resolved = forms.ChoiceField(
-        choices=LOCATION_RESOLVED_CHOICES,
-        required=True
-        
-    )
-    
-    
+    location_resolved = forms.ChoiceField(choices=LOCATION_RESOLVED_CHOICES,required=True)
     merek = forms.ChoiceField(choices=MEREK_CHOICES,required=True)
     model = forms.ChoiceField(choices=MODEL_CHOICES,required=True)
     varian = forms.ChoiceField(choices=VARIAN_CHOICES,required=True)
