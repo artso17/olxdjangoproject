@@ -7,20 +7,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block title_tab %}{% endblock title_tab %}
-        
+
         {% include 'snippets/style.html' %}
 
     </head>
 
-    <body>
+    <body style="min-height:90vh" class="position-relative">
         {% include 'snippets/navbar.html' %}
 
-        
-        <div class="container col-sm-6 " style="margin-top:80px">
-            {% block contents %}{% endblock contents %}
 
+
+        {% block contents %}{% endblock contents %}
+
+
+        <!-- <div class="container " id="footer"> -->
+        <div class="row justify-content-center bg-dark mt-5 footer">
+            <div class="col-5" data-bs-theme='dark'>
+                <center>
+                    <h5 class="text-warning-emphasis">Tentang</h5>
+                    <p class="text-light-emphasis">Pengembang: Aditya Prasetyo Budiarso</p>
+                    <p class="text-light-emphasis">Website ini digunakan untuk memenuhi persyaratan Skripsi sebagai
+                        sarjana
+                        Akuntansi</p>
+
+                </center>
+            </div>
         </div>
+
+        <!-- </div> -->
         {% include 'snippets/script.html' %}
+
+
     </body>
 
 </html>

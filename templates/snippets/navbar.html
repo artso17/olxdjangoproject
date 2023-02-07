@@ -1,17 +1,10 @@
 {% load static %}
-<nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'form1' %}">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#form">Form Prediksi</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+<nav class="navbar  fixed-top bg-body-tertiary navbar-expand-lg" data-bs-theme='light' >
+  <div class="col-sm-6 container-fluid justify-content-between">
+    <a class="navbar-brand" href="{% url 'form1' %}">
+      <img src="{% static 'image\logo-akuntansi.png' %}" alt="Logo Akuntansi UMY"  height="30">
+    </a>
+    <a class="navbar-brand " aria-current="page" href="/#form">Form Prediksi</a>
+  </div>
+  </div>
+</nav>

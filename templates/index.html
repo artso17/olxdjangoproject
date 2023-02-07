@@ -1,46 +1,66 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title_tab %}
 <title>Ini adalah title</title>
 {% endblock title_tab %}
 
 {% block contents %}
-<div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
+<div id="carouselExample" class="carousel slide" style="margin-top:56px">
+  <div class="carousel-inner">
+    <div class="carousel-item bg-warning active" style='height: 500px;'>
+      <div class="row justify-content-center align-items-center" style='height: 500px;'>
+        <div class="col-4">
+          <h3>Website yang memudahkan kamu untuk memprediksi harga mobil bekas yang sesuai harga pasar</h3>
+        </div>
+        <div class="col-4">
+          <img src="{% static 'image\john-schnobrich-FlPc9_VocJ4-unsplash.jpg' %}" alt="" height="400px">
+        </div>
+
       </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+
+    </div>
+    <div class="carousel-item bg-secondary" style='height: 500px;'>
+      <div class="row justify-content-center align-items-center" data-bs-theme='dark' style='height: 500px;'>
+        <div class="col-4">
+          <h3>Prediksi akurat dengan menerapkan AI yang terlatih, kamu tidak perlu lagi khawatir</h3>
+        </div>
+        <div class="col-4">
+          <img src="{% static 'image\possessed-photography-JjGXjESMxOY-unsplash.jpg' %}" alt="" height="400px">
+        </div>
+
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item bg-success" style='height: 500px;'>
+      <!-- <img src="..." class="d-block w-100" alt="..."> -->
+    </div>
   </div>
-<form method="POST" id='form' >
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container col-sm-6 " id='form' style="padding-top:80px">
+  <form method="POST" style="padding-bottom:200px">
     {% csrf_token %}
 
     {% for field in form %}
     <div class="mb-3 row justify-content-between">
-        <label for="{{field.id_for_label}}" class="col-sm-5 col-form-label">{{field.label}}</label>
-        <div class="col-sm-6">
-            <select name='{{field.name}}' id='{{field.id_for_label}}' class="form-select" required>
-                <option value=''>Open this select menu</option>
-                {% for value in field %}
-                {{value}}
-                {% endfor %}
-            </select>
+      <label for="{{field.id_for_label}}" class="col-sm-5 col-form-label">{{field.label}}</label>
+      <div class="col-sm-6">
+        <select name='{{field.name}}' id='{{field.id_for_label}}' class="form-select" required>
+          <option value=''>Open this select menu</option>
+          {% for value in field %}
+          {{value}}
+          {% endfor %}
+        </select>
 
-        </div>
+      </div>
     </div>
     {% endfor %}
 
@@ -48,6 +68,6 @@
 
 
     <button type="Submit" class="btn btn-warning">Prediksi</button>
-</form>
-
+  </form>
+</div>
 {% endblock contents %}
