@@ -33,9 +33,7 @@ def predict_form_view(request):
     
     pickled_model = pickle.load(open('model.pkl', 'rb'))
     if request.method == 'POST':
-        # print(request.POST.dict())
         df=pd.DataFrame([request.POST.dict()]).drop('csrfmiddlewaretoken',axis=1)
-        # print(df.columns)
         result=pickled_model.predict(df)
         global RESULT 
         RESULT=result
